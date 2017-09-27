@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="f897af25-149d-4d38-84c0-5f1114eb4307">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>XSLTransformation</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="60fee4d9-419a-483c-877b-8f9947e71c7b">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>templateLocation</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="d729e0c4-a2f1-4bdf-b476-88bdb73dc451">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xmlLocation</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="b86b506e-2dc3-446d-8fca-ad75c04ea703">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>outputFile</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="fa910681-d7f7-492a-9292-8eb8c4407cd7">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>paramKey</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="79d955a6-fe3f-443d-9941-9f325d315532">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>paramValue</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="78739193-49df-499e-b77d-4c11fb39ffd4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>paramDelimiter</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="5396b123-51af-42d5-89cd-3adc391f76ec">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>parsingFeatures</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="e654d185-1677-4ecf-89e5-274d9ae2cf8f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="67dd7647-8e15-456b-ad73-d35d87ba307e">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="cb87ab5e-d6f6-44a1-8091-3aed2a827548">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="9ab25cd4-1b01-4503-9f42-7ca5591977a0">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="bd40c2cb-6764-43f3-8589-f10b42098bbc">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="c710fd8e-2ef9-46a6-a23a-2b22ff178f1f">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="2dd6e70b-caa8-4c77-a3a3-965f808ddacd">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.xml.XSLTransformation</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

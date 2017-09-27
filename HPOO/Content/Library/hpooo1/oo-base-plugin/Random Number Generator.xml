@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="8df9246b-5878-451e-a094-9e61b6a6d81f">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Random Number Generator</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="a060cdde-61c1-464a-99f1-43148f968ef4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>min</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="17852914-3526-4bc0-8459-a2d74ea54ca7">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>max</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="ed99bc4b-9ea4-42ef-b9cb-c2b706aea81b">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="731ef2ba-15ad-4a39-bdef-c3836eea22a2">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="691df67f-dd63-4e87-af52-6134740cacb9">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="ef80e44a-a56e-4d0e-807f-090d4109a44a">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="a70a8b92-a1d5-428c-aed0-0d0cd83ab273">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="146e37e9-48cb-4b33-8d38-15e4e78377e0">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="ae0bf887-57c0-4c5d-a20d-d41fe8b13030">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Random Number Generator</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

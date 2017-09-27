@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="a5f4208a-5c4c-459e-9762-9f0e99a4ef87">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Search and Replace</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="072d36bc-e470-4f2f-a6ca-99fa95ab0a45">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>input</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="52525470-5a7f-4e4d-b99f-f15fb9b7cd50">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>replace</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="184e62f9-ebbb-4ee4-80a5-71b1176e410b">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>replaceWith</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="c2b721ae-a48d-4252-b643-313538e3432f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="3c1f89b7-3211-40c8-8d25-b8cabb647f76">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="06e2e78a-122e-4a98-b47f-7cab35e3b44c">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="58ba416a-a830-4f8c-bb29-b8f47c7aa39c">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="85f7de60-06e2-4f95-88d0-6be3f05c9500">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="dee1ef26-beb8-43e2-80aa-45e8e72e2d39">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="aae0f7a4-47c2-4bd3-b160-298cec13c11f">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Search and Replace</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

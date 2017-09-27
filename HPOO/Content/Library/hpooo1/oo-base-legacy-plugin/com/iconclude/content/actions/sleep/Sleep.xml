@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="a9298e7e-ea1c-46b6-9684-8e115683220f">
+  <descriptionCdata><![CDATA[a9298e7e-ea1c-46b6-9684-8e115683220f.description=wait op, duh
+]]></descriptionCdata>
+  <annotation>a9298e7e-ea1c-46b6-9684-8e115683220f.description</annotation>
+  <name>Sleep</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="ad1e9c54-49e3-453a-ac5e-74092dd33108">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>seconds</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="db92cf30-346b-43f6-b03c-0945a5240ae0">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="ab01ab7f-af71-4042-a07a-ee8b811d3811">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="d5d0c2a8-6b9d-45e1-998e-7805f4ee441d">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="60f8da56-9203-4540-bc77-b704c1dd770d">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="8149b226-2ed6-4970-b3bc-3339af38ec7b">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="05f97bbf-28a0-4c27-8d91-2febfd3b5cfe">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="69862786-534c-4041-a17b-2ed2f1a6b3c0">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.sleep.Sleep</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

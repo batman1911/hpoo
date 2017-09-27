@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="332831a8-7c1f-4ee4-b799-2ff4682c6f5b">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Base64EncodeAction</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="c833e168-018f-44f1-8222-f4294a4bbe6e">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="67af1caa-a8ed-4f4e-9d97-a08de996c9c1">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="623e87ff-f175-422f-911e-65720186bd05">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="0d9ebaa5-e792-4bc3-a3bb-5fc0bfd1c1ba">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="3129469e-d10f-42cb-8567-962aa2175ff5">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="191a2f35-7d3f-4ca1-bac1-771b1fc02d9a">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="917d0145-7396-437c-9017-a4cc9cd4890e">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.hp.oo.content.actions.base64.Base64EncodeAction</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

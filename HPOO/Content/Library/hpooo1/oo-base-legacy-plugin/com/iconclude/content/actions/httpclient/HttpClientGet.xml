@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="86dfabd1-5eec-4e86-84bf-f8e80cc95a6f">
+  <descriptionCdata><![CDATA[86dfabd1-5eec-4e86-84bf-f8e80cc95a6f.description=Service to perform an HTTP GET via the Java HTTP Client\n\ninputs\:\nurl - the url to GET from.\nusername - The username to use for basic authentication to the url\npassword - The password to use for basic authentication to the url\ntimeout - a timeout after which the connection should be terminated, or 0 for no timeout.\nuseCookies - Enables cookie tracking. Cookies will be stored between consecutive calls. valied options are\: true/false\ntrustAllRoots - enables weak security over SSL. A SSH certificate is trusted even if no trusted CA issued it. valied options are\: true/false\nproxy - a proxy to use when accessing the web site.\nproxyPort - a port on the proxy to connect to.\nproxyUsername - a username to use when connecting to the proxy.\nproxyPassword - a password to use when connecting to the proxy.\nkeystore - the path to the keystore to use for SSL Client Certificates\nkeystorePassword - the password for the keystore\nencodeURL - perform URL encoding\nuserAgent - if the HTTP header USER_AGENT needs to be overridden, pass in the value here\ncharacterSet - character set for request. Default is UTF-8followRedirects - specifies whether or not the get command should automatically follow redirects.\n\nResults\: \ndocument - The Complete document returned by the GET operation\nPageLoadTimeInMS - The number of milliseconds it took the page to load.\nResponseTimeInMS - The number of milliseconds it took before the server responded.\nurls - a list of urls linked to by this page. Each url is only listed once.\n\nResponses\:\nsuccess - The GET command completed\nPAGE_NOT_FOUND - The url specified to GET from could not be found.\nINFORMATIONAL - The GET was not fully processed, the server responded with an informational response\nREDIRECTION - The specified URL has moved.\nfailure - The GET operation failed.\n
+]]></descriptionCdata>
+  <annotation>86dfabd1-5eec-4e86-84bf-f8e80cc95a6f.description</annotation>
+  <name>HttpClientGet</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="801e0009-132d-4d13-9949-5642d3e46b16">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>url</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="07fbc678-af41-4be7-b784-97727117e87d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>username</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="ee345c42-61c5-447e-9b9e-b05f07f08624">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>ENCRYPTED</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>password</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}tFQ2pnWYKQCGLnn/5LPzoA==</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="d4b7f5f1-dbe1-41a6-be98-24be5c968411">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>timeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="e95ce4e9-d812-4207-9d8a-6c8b4caaf957">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>useCookies</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="9a1f6c14-3c7a-43ec-8f8d-7aa2847b6604">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>trustAllRoots</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="d29a3e9c-d10e-4faf-b8bc-21f620ecda39">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>proxy</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="6243b4b7-b00e-43cd-996d-8b7b7dfa921c">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>proxyPort</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="71a011b9-31e6-44a7-ac2f-a97e2eadb9c5">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>proxyUsername</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="fec36073-4fbf-457b-b6ae-5c6b4d8810c8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>ENCRYPTED</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>proxyPassword</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}tFQ2pnWYKQCGLnn/5LPzoA==</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="eb85f2ea-666c-4dbf-a3c5-e4ef4ac799a4">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>keystore</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="12dc0451-75fb-4c69-a7d7-7d800f247db2">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>ENCRYPTED</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>keystorePassword</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}tFQ2pnWYKQCGLnn/5LPzoA==</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="63614330-e984-4fe8-b1a7-84ad1d0a5bc7">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>encodeURL</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="553c4a7e-1706-4d84-a62b-120fdacb70f5">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>userAgent</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="2203b3a9-0645-4884-b7d9-81ff77653187">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>characterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="079e21b8-4534-4095-a38b-bb0058ddcc60">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>followRedirects</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="cd4bd32b-b2b4-4731-a4d4-21560dbc7b33">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>delimiter</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="7d82e842-fd11-4864-8f1d-6d1a556ff37b">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>headerNamesList</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1d463e56-0549-4143-983b-b37725b285bc">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>headerValuesList</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="7ae2a9d4-4a03-445a-8a86-aeef5f63d278">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>queryNamesList</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1d0f0b43-43af-4059-8069-36e4959be071">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>queryValuesList</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="29b635e6-a1fb-4208-8376-5e427cf1f871">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>socketTimeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="b1cf8c3a-a3d7-4ca3-9566-8e9301fba194">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="2c631fb3-6bcd-4d3b-97bf-4bee846b954f">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="dd3ca359-03e6-4d3a-96dd-b0964129cdc9">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="f57b36fc-bfb8-4338-ac6b-b0be1826966a">
+      <annotation></annotation>
+      <name>PAGE_NOT_FOUND</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="beabb533-c1ca-4712-91f2-9f78ecda67ab">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="fa5a8d45-5cd1-4e41-9ab7-a980706fad68">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="235b77cf-78dc-4ede-a386-804e497655f8">
+      <annotation></annotation>
+      <name>INFORMATIONAL</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="f2b9a78e-78e9-4a02-b056-6fa05428b8da">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="78620903-6add-4db1-bcd7-c378262dc930">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="56e89be4-97a5-461a-a37b-eb438688a119">
+      <annotation></annotation>
+      <name>REDIRECTION</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="304d9dd6-f01e-43d8-9c4a-a5ffa8cf4793">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="c2d2af1c-948a-4b00-82bc-597e37023447">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>2</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="ceab174d-5af2-4db0-a9cd-c0c99b79704d">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="ceb3305e-5c82-4d43-9c76-2f8ae2ca89b6">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="f3870b86-ef14-443f-b989-b2220a02bc14">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-4</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="ede14f1a-96d0-42f4-bf87-b98bdfae1136">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.httpclient.HttpClientGet</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="252f7d7d-b020-49ec-9859-b201b003c654">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Generate Report From Lists</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="1873bab8-3914-4286-995e-2e624bfba8d2">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>format</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="342135c3-d25c-45b2-b2e5-552a93fd3560">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>delimiter</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="8e7218a5-f37f-4a5e-afed-be6378882270">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>extraInputs</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="0a95d089-aa3a-407d-9427-f29919ce01f1">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="ca0a6815-8592-4ac5-b4d3-c8c79f65156c">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="604e3887-e025-4dbe-a01d-0eaa22749c62">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="6d3ae345-7570-4369-866d-816458b0ae9e">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="ccf090ad-1a9a-4b90-97d6-2f42878c71dd">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="0ade51b3-82ec-4b6c-8bf5-4f8d1205b3be">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="0e319d10-8d3c-41ef-8463-3e145d313af3">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Generate Report From Lists</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

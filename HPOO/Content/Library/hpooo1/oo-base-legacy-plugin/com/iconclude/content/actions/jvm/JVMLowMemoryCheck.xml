@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="f499c5d6-bcbb-4073-a90a-2c75bfa13a50">
+  <descriptionCdata><![CDATA[f499c5d6-bcbb-4073-a90a-2c75bfa13a50.description=<pre>Service to retrieve JVM memory pool info (only 1.5 JVMs)\n\nInput Operators\: \nNone\n\nResponses\:\nmemory within threshold - memory is within the threshold\nlow memory reported - memory was reported low\nnon 1.5 jvm - JVM is not 1.5\nfailure - general failure reported\n\nExtra Results\:\nnumberOfMemoryPools - contains the number of memory pools managed by the JVM\nlowMemory - true/false; if any of the pools have reported a usage threshold exceeded\npoolName - memory pool name\npoolUsed - contains the amount of memory used (in bytes) in the heap\npoolCommitted - amount of memory in bytes that is committed for the Java virtual machine to use\npoolInit - amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management\npoolMax - Returns the maximum amount of memory in bytes that can be used for memory management\npeakUsed - contains the amount of memory used (in bytes)\npeakCommitted - amount of memory in bytes that is committed for the Java virtual machine to use\npeakInit - amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management\npeakMax - Returns the maximum amount of memory in bytes that can be used for memory management\ncollectionUsed - contains the amount of memory used (in bytes)\ncollectionCommitted - amount of memory in bytes that is committed for the Java virtual machine to use\ncollectionInit - amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management\ncollectionMax - Returns the maximum amount of memory in bytes that can be used for memory management\n</pre>
+]]></descriptionCdata>
+  <annotation>f499c5d6-bcbb-4073-a90a-2c75bfa13a50.description</annotation>
+  <name>JVMLowMemoryCheck</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="5c68ac18-1e69-40a4-b8c0-4df4713e466f">
+      <annotation></annotation>
+      <name>memory within threshold</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="3059cae2-ac76-4c47-9f98-999696eec3d1">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="f8d31b37-5068-426a-a952-9cdad898bfe5">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="2a7ccda7-a863-4319-8625-f70298db826e">
+      <annotation></annotation>
+      <name>low memory reported</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="3e21d715-e698-40d2-ae9c-684a0e03dda8">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="f08f65e2-3a66-492d-b558-badf3d6ee19c">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>5</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="e9d320f3-4850-4663-b548-9a9300e8cb42">
+      <annotation></annotation>
+      <name>non 1.5 jvm</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="28e9a0b3-f770-4d4a-bb75-6e587d312a95">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="1a11dd4e-1689-4942-b414-3beb84449b6d">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>6</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="cad7777e-737c-4283-93d0-c3a58e2b363a">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="21499ad1-b445-4a3b-8e48-c7a37b53e230">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="952de8c9-e0ba-4d53-a30b-f2a7e40a5c2f">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="bab05de7-3bdb-4c7c-8621-f2990c4681ac">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.jvm.JVMLowMemoryCheck</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

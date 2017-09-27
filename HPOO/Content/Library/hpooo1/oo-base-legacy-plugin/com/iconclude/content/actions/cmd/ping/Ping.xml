@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="efabc830-ea7b-4fd0-8250-8a2b22c0cc4d">
+  <descriptionCdata><![CDATA[efabc830-ea7b-4fd0-8250-8a2b22c0cc4d.description=<pre>Runs a Ping command either locally or remotely depending on the specified protocol. Remote credentials (remoteOS, hostname, username, password, keyFile etc) are required if running remotely. The telnet command requires the usernamePrompt and passwordPrompt inputs. \n\n\nInputs\:\ntarget - target host to ping\npacketSize - size of the ping packet\npacketCount - number of packets to send\nprotocol - the protocol used to run the command (ssh, Telnet or local)\nremoteOS - if running a command on a remote host, what is the OS of the remote host\nhostname - hostname of the remote host\nusername - username to connect to remote host as\npassword - password to connect to remote host as\nkeyFile - path to private key file for remote host, relative to ICONCLUDE_HOME\nusernamePrompt - the prompt that when seen should send the username (used only for telnet)\npasswordPrompt - the prompt that when given should send the password (used only for telnet)\n\nResponses\:\nsuccess - the command was executed successfully\nfailure - the command could not be executed\n\nReturns\:\npacketsSent - the number of packets sent\npacketsReceived - the number of packets received\npercentagePacketsLost - the percentage of packets lost\ntransmissionTimeMin - minimum time taken for transmitting the packet\ntransmissionTimeMax - maximum time taken for transmitting the packet\ntransmissionTimeAvg - average time taken for transmitting the packet\nreturnResult - the raw output of the command\nreturnCode - return code from the executed command\nerror - the STDERR of the command\n</pre>
+]]></descriptionCdata>
+  <annotation>efabc830-ea7b-4fd0-8250-8a2b22c0cc4d.description</annotation>
+  <name>Ping</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="945bc4db-e388-4210-9157-23a07fcf462e">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>targetHost</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="ff175792-4f48-411f-a149-01cfdc074439">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>packetCount</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="f467655c-6cc7-4bd8-a40f-6df4759347c8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>packetSize</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <userInputBinding id="3b4c42e9-e67e-4225-a16a-69bb163ab124">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>protocol</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="4ab48fbc-cebc-4e17-bda1-cd5ed5712d46">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ipVersion</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="f0304ef3-fc52-42b2-a873-9b11e93ac34e">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>hostname</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="a25555d4-e203-472c-ae3a-3ddccad059e9">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>username</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="ab5bb30c-4ec7-4902-bcc3-16e537fc896a">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>ENCRYPTED</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>password</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>{OBFUSCATED}tFQ2pnWYKQCGLnn/5LPzoA==</value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="11ea25ec-489e-449a-ae51-6767a729cfaf">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>keyFile</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="41274ed1-e8dd-4925-83ad-3c0e7e0c045f">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>usernamePrompt</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="3bfc77a5-79a8-46d0-8847-8f82e9b37eb8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>passwordPrompt</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="164106b3-331b-403f-96fc-e1db1947db22">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>remoteOS</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="8edd7fae-278b-4a64-b574-d22476fb4ed8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>timeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="ac18c680-d45e-4f9d-a30e-24d00c572174">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="ba9ffd04-671a-4d86-9918-627210a8f148">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4ebc8f19-9e1e-49b9-82b8-9cdfe7adc500">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="c9b3415a-65d4-46ff-9c9a-722f657454ee">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="b01b97b8-1cc2-49f0-a11b-3b42e2a0d7d7">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4c62a183-9089-4804-a451-ed3ed236fa35">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="881dce6f-abbf-44e4-803c-4ab407d800c2">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.cmd.ping.Ping</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

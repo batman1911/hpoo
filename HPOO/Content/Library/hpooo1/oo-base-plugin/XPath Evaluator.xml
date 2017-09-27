@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="6a8c7666-94d4-4ad5-95b9-e58f0116bd6c">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>XPath Evaluator</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="070315ac-d4fd-4fd8-8f3f-cc2eb46b8b74">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xml</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="0494dbcb-ca07-43db-8217-0d71811ed3cb">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xpathExpression</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="0c900bca-357c-47ef-a262-b8d1fa4d2dfa">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>parsingFeatures</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="c61d92d4-488f-483e-b9b0-26239b7b3a6d">
+      <annotation></annotation>
+      <name>has more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="2b3e9453-8a3f-48f0-83e6-b3145a2b8b24">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="23b2be6a-c7e2-48fe-b084-1ddcec6e3b13">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>has more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="5d61d273-948d-4297-a249-67863de4c492">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="fcced842-4728-4878-bc44-dfd5eb389e15">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="a6742926-4b41-4eb4-8a80-9a78aff06234">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="d7712ccc-3fde-41b4-bb81-2de57b56aa00">
+      <annotation></annotation>
+      <name>no more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="0af78909-d044-41af-8504-b0c42b1ad0ea">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="59d6a3ca-1034-4523-b84d-7fc10c936d07">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>no more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="288cae92-2d16-4ffe-a9ca-70bb35c9e413">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>XPath Evaluator</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

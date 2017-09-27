@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="d448b037-676a-430a-9b7f-46013945eb20">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Generate Report From Lists</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="522c8ecd-5681-40ac-a448-5e43f8009473">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>Step Context</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <iconSpec id="a7633e47-6b27-413b-ae04-41787d6d3265">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-context-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Generate Report From Lists</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

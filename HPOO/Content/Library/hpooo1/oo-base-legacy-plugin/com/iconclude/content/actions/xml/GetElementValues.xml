@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="a253fee1-e17e-4e4a-8178-31936573ce97">
+  <descriptionCdata><![CDATA[a253fee1-e17e-4e4a-8178-31936573ce97.description=<pre>Retrieves the value from a given XML Element. Child nodes are not considered as values. \n\nInputs\: \nxml\t- The xml (in the form of a String). \n\nResponses\: \nsuccess \t- The value retrieved successfully. \nfailure \t- The operation failed. \n\nReturns\: \nreturnResult\t- The value of the given XML element. \n\nNOTE\: \nThe following is a valid input for this operation- \n\n&lt;title lang\="en"&gt;Everyday Italian&lt;/title&gt; \n\nwhile the following is not a valid input and will not return any result- \n\n&lt;book category\="COOKING"&gt; \n    &lt;title lang\="en"&gt;Everyday Italian&lt;/title&gt; \n    &lt;author&gt;Giada De Laurentiis&lt;/author&gt; \n    &lt;year&gt;2005&lt;/year&gt; \n    &lt;price&gt;30.00&lt;/price&gt; \n&lt;/book&gt; \n\n</pre>
+]]></descriptionCdata>
+  <annotation>a253fee1-e17e-4e4a-8178-31936573ce97.description</annotation>
+  <name>GetElementValues</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="b78457e7-587d-4b2f-86ca-a3495e55cd4f">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>elementName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="23d895c3-a810-4380-8952-21a5f8932d7a">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>attributeName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="2d73eedf-1fed-413e-afb0-f7eb19558907">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xmlLocation</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="14b0f888-5a1b-48ca-98c3-98d946c03e8c">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xmlDocument</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="fddbeb17-53e2-4844-9b3f-2ef5ebed69c8">
+      <annotation></annotation>
+      <name>valid xml document</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="a0c38cb8-1ab7-4ec4-9e0a-e248ca9809a6">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="569a457a-2231-4981-a105-44ec6e8d3662">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>7</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="c890d5be-4393-4681-89e4-85123589f3d5">
+      <annotation></annotation>
+      <name>invalid xml document</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="a0385eb1-83af-43d4-9eb6-cb3e985d5e39">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="ec4763f9-3f24-4af4-8f84-5c0b9e45a791">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>8</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="144871d2-df94-43e4-b828-c40ee7618a71">
+      <annotation></annotation>
+      <name>xml document not found</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="08a62146-fbf9-47cc-8a20-7213db65bec9">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="c5967e7e-ff43-472d-a13a-34773ad62f65">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>9</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="791b35cf-1e84-470d-a3d1-f257b66d5e3f">
+      <annotation></annotation>
+      <name>xml element not found</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="90f0f40d-ec81-4941-b951-bd6aa442db9a">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="d60b2ef2-d78c-49ac-bebc-f6511d1f9af2">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>10</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="17226557-0261-4565-a350-5b2297dbdaa5">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="4a5ffeac-72e6-4ed4-a14f-265c2a4e36ae">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="d4f53230-8151-4636-a67a-bd544251ea8a">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="27c83308-94f6-42db-8131-96ef34f53725">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.xml.GetElementValues</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

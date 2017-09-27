@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="c8799c32-1a10-47fe-9434-e20a131981ab">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>subnetIterator</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="578b5737-8ecf-431c-aeb2-a1b60196cb1f">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>startAddress</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="ec0fa945-7bb5-4b24-95ac-6be446f69461">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>netmask</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="32213448-3dfd-41d1-a3c2-32e5ad3b5adf">
+      <annotation></annotation>
+      <name>has more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="cd768cd4-9235-46e2-af59-97932b085619">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="65727602-4168-418a-a6e0-47bca3b1f487">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>has more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="c68575cd-22ad-4536-a70b-4aa771a2bd09">
+      <annotation></annotation>
+      <name>no more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="63f441b1-5faa-44c6-b039-92c3af71fa90">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="80067c3b-d6fd-45ff-bffb-d087f0554a53">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>no more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="0a6a8366-2a45-4e3a-a3b3-e407f30fcf5e">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="6ac61ff6-f587-47d5-88d3-0bcc81855b0b">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="713e31a0-22ba-4ce7-b991-255fd1ade8ad">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="e4eae43e-704d-46e1-a877-df21dca92be5">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>subnetIterator</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

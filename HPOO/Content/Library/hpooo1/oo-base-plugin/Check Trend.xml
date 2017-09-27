@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="b2c05dc5-d6e7-4157-aa2d-e5dfc15f28d8">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Check Trend</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="cf24f6c4-230a-4830-8e75-1a6cb5a91566">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>list</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="e5ec3bf4-2eb4-4434-82e0-1c941c349d03">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>delimiter</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="d639750d-6adf-4001-9ba1-7e1e76c47cc5">
+      <annotation></annotation>
+      <name>increasing</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="5d64a289-d6e1-481d-ada2-f8bc892d32a8">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="a2d9f908-1652-40a1-bc67-f871705fcaf3">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>increasing</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="415cccc7-1e46-4df6-8102-02f07c62ea0a">
+      <annotation></annotation>
+      <name>decreasing</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="3d94df7f-5f4c-4abd-8f52-71543354b146">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="45d0ef8a-c40e-4422-b33d-5c23a63271cb">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>decreasing</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="098670f8-ce05-49e8-ac50-59d901783fae">
+      <annotation></annotation>
+      <name>stable</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="dfb7b9da-47bc-4995-95c6-f5275b89a54b">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="d818fec5-0227-40dc-8f8c-c53ddf4dbf42">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>stable</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="b09edf82-bba9-4788-bc00-fe8de8f8efad">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="37566b20-fb29-44c0-944a-dcc1ed382a46">
+          <annotation></annotation>
+          <name>response</name>
+          <fieldName>response</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="09ac883e-c58f-4284-8ccf-5a42fc0b2053">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="88721f8c-921e-4364-9926-5ba2d3ec368c">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Check Trend</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

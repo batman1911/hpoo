@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="13c7394e-1b6f-4e51-85ac-8291f5c59176">
+  <descriptionCdata><![CDATA[13c7394e-1b6f-4e51-85ac-8291f5c59176.description=Runs a command where this JRAS is installed.  You must supply the full path and any arguments to the command. Note\: environmentParameters is a comma separated list of name,value pairs of the form\: 'a\=b,path\=a;b;c,data
+]]></descriptionCdata>
+  <annotation>13c7394e-1b6f-4e51-85ac-8291f5c59176.description</annotation>
+  <name>CommandExecProcTools</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="4428cdbd-403d-4e3b-8da4-84387da6f782">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>command</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="518f4bcc-5573-40e4-b697-f4d306284bfd">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>startingDirectory</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="7c8b5d33-47e4-4d7c-9314-12071aeeac32">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>environmentParameters</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="b5dee1e7-95b7-4dc5-895f-3c6d5e14d435">
+      <annotation></annotation>
+      <name>Failed</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="921c57d9-4dc2-4b32-8dff-ca39b42a85ac">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="fc9553f3-a71e-4f4c-9079-bac779cdb3d1">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="859ac173-1a3c-4851-92f4-064d6cc88486">
+      <annotation></annotation>
+      <name>Passed</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="fd04005e-9ddf-4f1c-bed2-5ff65b54639d">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="7142cd77-e309-4dd7-a6e2-88c9b624ec01">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="7a109cd3-d1eb-4ae6-b484-855596b928d4">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.utils.RemoteCommandExec.CommandExecProcTools</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

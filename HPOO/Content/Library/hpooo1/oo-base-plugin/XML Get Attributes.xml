@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="f16432bf-6ecc-4b6f-9998-3b3d84248d7d">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>XML Get Attributes</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="5ef33a90-bde9-4cab-be91-9041fc2c05ae">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xml</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="1d46b62c-b666-427a-8fd0-8b31d9203a4f">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>attributeName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="16967955-534d-4b6f-a7db-ef9878b1a0ba">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>parsingFeatures</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="707aeb43-029d-4ea9-9b31-06765b02c665">
+      <annotation></annotation>
+      <name>has more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="7c5bff75-6010-46b4-a5c0-1e9586e7d44d">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="8982129e-6809-4316-b62c-fd89d6779ef2">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>has more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="2b83322e-cdfc-4b88-84fb-2439f0baf4f8">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="3b338e43-b651-492c-997c-af3eed170ad2">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="095e4132-80ae-4026-b3e2-dc841d91dcd3">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="5d3fd6ce-8724-444b-bcb0-d1abdbdeecb7">
+      <annotation></annotation>
+      <name>no more</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="a61aa5d9-2669-4341-98ee-2c2c1ca61719">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="9f6b65a9-b1d8-4391-a4c6-5a1c3a785521">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>no more</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="0d0e6db4-70a4-44f7-b356-fe5eda055436">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>XML Get Attributes</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

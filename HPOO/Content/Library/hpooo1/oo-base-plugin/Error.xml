@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="20a70b28-f177-4578-89d1-74b4b747221e">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Error</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <iconSpec id="c088bfee-764e-4d25-b83c-7fa5ce8ae993">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Error</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

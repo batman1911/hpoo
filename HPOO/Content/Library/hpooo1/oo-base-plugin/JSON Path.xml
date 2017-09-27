@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="2ae3244f-ec63-4f68-bfa9-4f6eb8c6a3b7">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>JSON Path</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="b388807e-8c9a-40ca-83d2-eae066d55a5a">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>json</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="b0f343d6-8623-4046-9320-0ebfd8f18018">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>jsonPathQuery</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="b4c08942-4f5b-4f26-943b-7d9a426a981d">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="20b01a93-bffc-4cb4-b189-b4fbcf741324">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="d70e80de-5d5d-4dda-ae16-e87ddf01c6f7">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="f3927e5a-d6c9-4c50-ac37-6fcf328cceda">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="d0a01e85-805c-4f65-91ac-da4399b29669">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="ac03fbfa-5952-4297-8c95-ca39a3978e9e">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="bb8eeaa0-21d7-46b2-b138-293c45a447da">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>JSON Path</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="6495fbb4-f24f-4b6d-acd6-2fc7706bf26e">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Resolved</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <iconSpec id="95725f5f-a12c-45ad-bdbf-e0aff9ec796d">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Resolved</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

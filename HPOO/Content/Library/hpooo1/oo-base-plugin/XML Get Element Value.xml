@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="08b6d533-017c-4103-9a97-6c9022feaf0f">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>XML Get Element Value</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="b575dab1-e1e3-43e9-98c4-5910118101f5">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>xml</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="73c5f1ba-3822-411a-8798-353bde8d2946">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>parsingFeatures</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="88b0b9af-6f6a-4ba7-a9e6-1ebc3b726668">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="c2f120a7-f27e-4b93-afbe-0f99725376bb">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="073f74ee-46f0-4868-89a1-ca427a3fb39c">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="e97e58bb-6ca2-416b-8e20-709ab6f4c323">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>true</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="15c322a2-c88e-41e4-a107-51a4083efa3b">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="ce127c0d-44e8-47ae-8435-aa8fb66cac51">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="579323e6-11e6-4212-87b8-46d02c71ce42">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>XML Get Element Value</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>
