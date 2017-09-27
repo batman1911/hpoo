@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="934231f5-8aeb-43c1-85b8-c3dc0f13a8e1">
+  <descriptionCdata><![CDATA[934231f5-8aeb-43c1-85b8-c3dc0f13a8e1.description=<pre>send HELO/EHLO command to SMTP Server Inputs\: SMTPhost - ip address  SMTPHostPort - Port on which SMTPServer listens (Default\: 25) Command - either HELO or EHLO Responses\:  success ? SMTP server response OK to sent message failure ? SMTP server response with different message Result\: SMTP server response </pre>
+]]></descriptionCdata>
+  <annotation>934231f5-8aeb-43c1-85b8-c3dc0f13a8e1.description</annotation>
+  <name>CheckEHLO</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="a130e3ae-6940-4008-a14f-bf5278455e84">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>SMTPhost</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="8d83c364-5c80-4b96-8c68-bd2ec7a5171c">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>SMTPPort</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="0af83f23-a339-476f-a392-45aefccf45fb">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>Command</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="2c420683-2024-4a81-ad23-0dc86d77599f">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="39a65878-375e-4ffd-905a-ae277b0b278f">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="5ca61156-abdb-4810-8b3d-58e693fc2f20">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="f4ae17e3-8b34-4037-a8e6-bf03f1fdfc4b">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="44f2a97d-4037-4ea0-ba4c-1a4f7e36bf6f">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="b1ceede1-c8e3-41d9-a666-80016da0c064">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="2996e7f3-87cc-466c-a683-0d29c4ccb607">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.smtp.CheckEHLO</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

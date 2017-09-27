@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="eaafb2ad-1728-4e32-a648-a21aa7539356">
+  <descriptionCdata><![CDATA[eaafb2ad-1728-4e32-a648-a21aa7539356.description=<pre>Service to retrieve JVM memory usage info (only 1.5 JVMs). \n\nInput Operators\: \nNone\n\nResponses\:\nsuccess - statistics retrieved successfully\nnon 1.5 jvm - jvm is not version 1.5\nFailed - general failure occured\n\nExtra Results\:\nheapUsed - contains the amount of memory used (in bytes) in the heap\nheapCommitted - amount of memory in bytes that is committed for the Java virtual machine to use\nheapInit - amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management\nheapMax - Returns the maximum amount of memory in bytes that can be used for memory management\nnonHeapUsed - contains the amount of memory used (in bytes)\nnonHeapCommitted - amount of memory in bytes that is committed for the Java virtual machine to use\nnonHeapInit - amount of memory in bytes that the Java virtual machine initially requests from the operating system for memory management\nnonHeapMax - Returns the maximum amount of memory in bytes that can be used for memory management\n</pre>
+]]></descriptionCdata>
+  <annotation>eaafb2ad-1728-4e32-a648-a21aa7539356.description</annotation>
+  <name>JVMMemoryUsageStatistics</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="5c725e33-6427-4db6-a01d-2ccf1d85834d">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="12a4c5de-b730-47f0-85fc-7141028708f7">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="09a35ed8-cf45-4858-9228-e095abd54d79">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="75169ad2-c450-417b-8b4b-dee2a10f6516">
+      <annotation></annotation>
+      <name>non 1.5 jvm</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="e089a32e-ce74-45c6-af7e-a6e530430ba7">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="fcba2adf-f518-4509-99ce-7d4022fcb0bc">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>6</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="c9d1b9f6-a313-41a4-910c-96b42a13267b">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="e91d2244-879f-4227-abb8-95150d315e9e">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="a471a219-1af6-43bd-a6f9-13ed5ba7ede9">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="f84a955d-a762-4c9b-b413-a08b73de0674">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.jvm.JVMMemoryUsageStatistics</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

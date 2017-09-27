@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="a556df93-b3a8-484f-9674-caab028e2ef5">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Diagnosed</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <iconSpec id="cde808eb-7696-410d-b13f-82ff22a2126a">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>Diagnosed</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

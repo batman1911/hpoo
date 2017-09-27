@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="84fa34ad-c51e-4915-bd3d-a86346badef4">
+  <descriptionCdata><![CDATA[84fa34ad-c51e-4915-bd3d-a86346badef4.description=<pre>Scan opened ports on give host Inputs\: Host - IP address Host name to be scanned Lowest Port - lowest port range Highest Port - highest port range Note\: To scan specific port gives same port as parameter for both Lowest Port and Highest Port To scan only known ports just don't give Lowest Port and Highest Port range Responses\: success - the command was executed successfully failure - the command could not be executed Result\: Host<ip> Number of ports Scanned Number of ports open Number of ports dropped Number of ports closed </pre>
+]]></descriptionCdata>
+  <annotation>84fa34ad-c51e-4915-bd3d-a86346badef4.description</annotation>
+  <name>PortScanner</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="b2b0e460-bf11-4bbb-9b39-32c7126cd68d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>host</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="fab667d0-563c-4959-9565-698fed50b018">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>lowestPort</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="2029e2cb-99b2-4e54-ba85-21e86463930a">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>highestPort</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="00bb871f-d1a5-4931-b792-464953a5b986">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="999335ed-6b64-442a-8572-4cb80b5b8fb0">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4556e2ad-7d9a-4921-9f8d-d5e2fa47cb4c">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="8258c693-c1c7-4050-b64d-f327f0c298f6">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="d05d691a-6ebe-4f79-a93a-423fc0d0404c">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="e9f6d920-4de5-4ec2-b416-26f4872236cb">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="a4429821-d4d6-4c82-b4e5-8d55729c646a">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.portscanner.PortScanner</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

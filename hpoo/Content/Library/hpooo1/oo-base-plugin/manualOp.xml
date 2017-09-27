@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="b6124950-005b-42ba-a17b-e4af17b87628">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>manualOp</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <iconSpec id="d9632c5a-283c-47f1-84d8-369fc6c900fc">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>manualOp</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

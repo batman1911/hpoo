@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="368b89b1-36ac-493c-8b87-6682b4cd514d">
+  <descriptionCdata><![CDATA[368b89b1-36ac-493c-8b87-6682b4cd514d.description=<pre> Given the list of HTML parameter names and values of an input tag in a form. This operation will extract the name value pair of that input tag.<BR>Inputs\: <BR> htmlParamNames - The parameter names parsed from the form input field. <BR> htmlParamValues - The parameter values parsed from the form input field.<BR>Responses\: <BR> success - The name-value pair was retrieved. <BR> failure - The htmlParamNames and htmlParamValues did not contain a name value pair. <BR> </pre><BR> Extra Results\: <BR> names - The name field of the input tag. <BR> values - The value field of the input tag.
+]]></descriptionCdata>
+  <annotation>368b89b1-36ac-493c-8b87-6682b4cd514d.description</annotation>
+  <name>FormSingleInputExtractor</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="0ecf9ac9-2747-47cb-a20b-ba82183828ed">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>htmlParamNames</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <userInputBinding id="d961b251-f6b4-4556-8882-93a43f27c3e7">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>htmlParamValues</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="41e55881-921d-4680-998d-c71f3547d116">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="9746d4a4-75ef-40e6-997d-afc447c6d4f6">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="0bf396bc-65e5-4851-b95b-7c3b3b6ec4ca">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="0e7fafcf-1cee-400f-abe6-2190affea2d4">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="63ce68e7-583e-4804-881e-4a15097daaf4">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="f40b7f97-fcc9-4d4f-ad5b-936bd88dc618">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>failure</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="df0b3548-4991-4e0a-b55e-19883dc7616c">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.httpclient.FormSingleInputExtractor</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

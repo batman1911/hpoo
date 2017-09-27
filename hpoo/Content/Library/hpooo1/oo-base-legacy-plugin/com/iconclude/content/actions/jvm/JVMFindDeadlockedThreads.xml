@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="94ce7271-7047-497c-8203-17e3d32869fc">
+  <descriptionCdata><![CDATA[94ce7271-7047-497c-8203-17e3d32869fc.description=<pre>Service to retrieve deadlocked thread stats on a 1.5 JVM.</pre>
+]]></descriptionCdata>
+  <annotation>94ce7271-7047-497c-8203-17e3d32869fc.description</annotation>
+  <name>JVMFindDeadlockedThreads</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="ce8570e4-6223-4795-98ff-e48c8634ed18">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="dea687fd-6e27-4af9-af80-38a5f3d42396">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="835213bf-5d01-4a82-a55e-00d68cc59c2f">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="a04883b5-9481-43ae-87d6-272b8c2cddc9">
+      <annotation></annotation>
+      <name>non 1.5 jvm</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="5106208c-c8d5-44e5-aa50-76a356e38396">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="e6fe231e-edaa-4bae-a972-1f4c528dbf17">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>6</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="05cb886a-172e-4652-be98-f3bc805202fc">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="6236fdac-bccb-46e0-bd46-8af0512f228f">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="bb026619-81fc-4880-97e3-a7a639173dd2">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="8cf06520-b4c3-4de8-8f63-44ad6d0c2617">
+      <annotation></annotation>
+      <name>thread deadlocks found</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="8702480b-1b17-493b-8147-5f5ee4bf4931">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="4aaedf05-12c6-4809-9ddb-b7e116b88628">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>thread deadlocks found</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="1467ae80-827d-45d2-860e-837d592e1314">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.jvm.JVMFindDeadlockedThreads</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

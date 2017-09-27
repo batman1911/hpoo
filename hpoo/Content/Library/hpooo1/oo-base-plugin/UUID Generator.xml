@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="d2535906-e559-482b-a38e-fd5152578c2c">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>UUID Generator</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="e15e773b-0bfc-4dc6-a36d-e09a236f6c83">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="0e141c47-7dc1-44df-9444-b0644d891444">
+          <annotation></annotation>
+          <name>result</name>
+          <fieldName>result</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <compare id="5a4533ba-8ac7-4e55-9f5a-e748c4c1163a">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>success</text>
+            <matchType>=</matchType>
+          </compare>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="f3503f17-668d-41e0-9b68-1d0c01118d67">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>UUID Generator</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

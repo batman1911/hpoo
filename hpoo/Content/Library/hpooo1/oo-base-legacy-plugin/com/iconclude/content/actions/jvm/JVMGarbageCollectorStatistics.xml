@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="41992e1d-ca64-44c8-a45a-44e6c0809703">
+  <descriptionCdata><![CDATA[41992e1d-ca64-44c8-a45a-44e6c0809703.description=<pre>Service to retrieve GC statistics on a 1.5 JVM.  \n\nInput Operators\:  None\n\nOutputs\:  gcNames - list (comma-delimited) of GCs managed by the JVM\ncollectionCounts - list (comma-delimited, by GC type) of number of GCs\ncollectionTimes - list (comma-delimited, by GC type) of approximate accumulated collection elapsed time in milliseconds\n\nResponses\: \nPassed - stats gathered successfully \nJVM Not 1.5 - the JVM is not version 1.5\nFailed - command failed\n</pre>
+]]></descriptionCdata>
+  <annotation>41992e1d-ca64-44c8-a45a-44e6c0809703.description</annotation>
+  <name>JVMGarbageCollectorStatistics</name>
+  <categories/>
+  <inputs/>
+  <possibleResponses>
+    <opResponse id="81a0a8d2-9e63-4671-9981-fbc256a97c96">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="99347655-cc72-4cd7-9696-fd28c79187fd">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="6492db11-c052-4fc8-be2f-1da67ca40797">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="0cfe3f95-122b-492e-ae8d-112b842c8686">
+      <annotation></annotation>
+      <name>non 1.5 jvm</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>NO_ACTION_TAKEN</type>
+      <matchRules>
+        <expression id="87e041a8-b168-464d-9d44-a067d3fc052f">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="e0f640b7-526c-43b6-a949-2d586c15f295">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>6</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="b6b49da6-58ce-44ff-8c80-18b3adf01da5">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="366dddac-fbb8-4e3f-be4a-3bf32cc7a2bb">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="927d2ff4-36b0-4722-9bcf-1d20184de93a">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="1eee51a4-8c3a-4f43-b385-c0288f01875b">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.jvm.JVMGarbageCollectorStatistics</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="33c61768-2918-4b03-bfd3-d39ad13bbc46">
+  <descriptionCdata><![CDATA[33c61768-2918-4b03-bfd3-d39ad13bbc46.description=<pre>Runs the Ping command locally. \n\nInputs\:\ntarget - target host to ping\npacketSize - size of the ping packet\npacketCount - number of packets to send\n\nResponses\:\nsuccess - the command was executed successfully\nfailure - the command could not be executed\n\nReturns\:\npacketsSent - the number of packets sent\npacketsReceived - the number of packets received\npercentagePacketsLost - the percentage of packets lost\ntransmissionTimeMin - minimum time taken for transmitting the packet\ntransmissionTimeMax - maximum time taken for transmitting the packet\ntransmissionTimeAvg - average time taken for transmitting the packet\nreturnResult - the raw output of the command\nreturnCode - return code from the executed command\nerror - the STDERR of the command\n</pre>
+]]></descriptionCdata>
+  <annotation>33c61768-2918-4b03-bfd3-d39ad13bbc46.description</annotation>
+  <name>LocalPing</name>
+  <categories/>
+  <inputs>
+    <userInputBinding id="20f9f042-b2e9-49ab-a7c4-00d9458d45b2">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>targetHost</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+    <staticBinding id="16ce318d-7267-4fdd-a106-45394ba58199">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>packetCount</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="282e9263-6f14-4d5d-b584-6ec65da57214">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>packetSize</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="df17f30e-5f06-4af6-a5ea-88437ec88ab0">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>timeout</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="83a27ece-3594-4db6-b1ed-9cdddf572b71">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ipVersion</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="ae43f3e6-a16e-4caa-a13f-8d4e2140d919">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="3ee38a76-f657-4710-a36b-13d304674d51">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="385651a7-83bd-4b69-894f-6a84871fe8ac">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="3d7a63b7-cafc-44b6-8334-a149afb6f381">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="a352ba6d-4f4d-4603-982e-6f6c610dbd33">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="aeaf535e-ccb9-4130-a1e1-0f21560c5dbe">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="5fc4da98-422d-4993-aec0-70f0fb5dd7ec">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.cmd.ping.LocalPing</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>

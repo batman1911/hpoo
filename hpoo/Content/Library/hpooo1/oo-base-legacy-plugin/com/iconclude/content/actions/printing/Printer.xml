@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="9dd3657d-0175-4a34-965d-e96f8bebced5">
+  <descriptionCdata><![CDATA[9dd3657d-0175-4a34-965d-e96f8bebced5.description=<pre>Prints a given document to the printer. This can print both text and images. The type of file to be printed must be supported by the printer. Also, the RAS must be run under an account for which the printer is accessible. As text files, this operation currently prints only .txt files.\n\nInputs\:\nprinterName - The name of the printer used for printing.\ndocumentName - The full path to the document to be printed.\n\nResponses\:\nsuccess - The document was printed.\nfailure - Something went wrong.</pre>
+]]></descriptionCdata>
+  <annotation>9dd3657d-0175-4a34-965d-e96f8bebced5.description</annotation>
+  <name>Printer</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="9e481832-c71e-4faf-aa33-c3e172d4aefa">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>printerName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="ca5befb8-0e3e-45cc-b2a2-69a7dbbfddc8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>documentName</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="851cd08d-f617-4c1d-849b-d0aac74a73af">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>false</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>characterSet</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <possibleResponses>
+    <opResponse id="771b795d-25c4-45eb-8e0c-cc342b79ecdf">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules>
+        <expression id="e1799c7c-3c4c-4fdd-ba27-c0cacd971d93">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="f9f15279-2c77-4789-a747-13041edcd424">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>0</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+    <opResponse id="656f83a8-a84e-4435-a61b-ac46ac7128b5">
+      <annotation></annotation>
+      <name>failure</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>ERROR</type>
+      <matchRules>
+        <expression id="11d6c918-90ca-4508-8a29-8b3bbaa17208">
+          <annotation></annotation>
+          <name>returnCode</name>
+          <fieldName>returnCode</fieldName>
+          <sourceType>RAWRESULT</sourceType>
+          <containsEvaluator id="901cd8c7-b361-4ecf-a752-e9e57fbf96c7">
+            <annotation></annotation>
+            <name>Config Item</name>
+            <text>-1</text>
+            <ignoreCase>true</ignoreCase>
+            <matchType>EXACT_MATCH</matchType>
+          </containsEvaluator>
+          <filters/>
+        </expression>
+      </matchRules>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <iconSpec id="65e44236-2177-45c3-b032-5d6eb8b0fbb8">
+    <baseIcon>webservice.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-legacy-plugin</artifactId>
+    <version>1.10.0</version>
+    <actionName>com.iconclude.content.actions.printing.Printer</actionName>
+  </plugin>
+  <fieldValues/>
+</operation>
